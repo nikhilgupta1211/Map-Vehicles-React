@@ -21,12 +21,11 @@ class Map extends Component {
         });
   }
 
-  addMarker(LatLng,title,icon){
+  addMarker(LatLng,title){
     var marker = new google.maps.Marker({
           position: LatLng,
           map: this.map,
           title: title,
-          icon: icon
         });
     return marker;
   }
@@ -38,7 +37,7 @@ class Map extends Component {
       var srcLatLng = {lat: cords.srcLong, lng: cords.srcLat};
       var destLatLng = {lat: cords.destLong, lng: cords.destLat};
 
-      var srcMarker = this.addMarker(srcLatLng,'Origin','truck.png');
+      var srcMarker = this.addMarker(srcLatLng,'Origin');
       var destMarker = this.addMarker(destLatLng,'Destination');
 
       const DirectionsService = new google.maps.DirectionsService();
@@ -82,7 +81,7 @@ class Map extends Component {
   render(){
     return(
       <section>
-        <Input pSubmit={this.pSubmit}/>
+        <Input pSubmit={this.pSubmit}/><br />
         <div ref="map" className="map">I should be a map.</div>
       </section>
     );
