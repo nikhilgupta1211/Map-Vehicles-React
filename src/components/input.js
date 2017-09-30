@@ -4,7 +4,7 @@ class Input extends Component{
     constructor(props){
         super(props);
         this.submit = this.submit.bind(this);
-        this.state = { srcLong: 28.589664, srcLat: 77.05742, destLong: 28.670498, destLat: 77.12631699999997 }
+        this.state = { srcLong: 28.589768, srcLat: 77.057725, destLong: 28.670498, destLat: 77.12631699999997 }
     }
     render(){
         return(
@@ -57,7 +57,9 @@ class Input extends Component{
                 destLong: parseFloat(this.state.destLong),
                 destLat: parseFloat(this.state.destLat)
             };
-            this.props.pSubmit(cords)
+
+            this.setState({});
+            this.props.pSubmit(cords);
         }
     }
 }
