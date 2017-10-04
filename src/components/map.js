@@ -18,7 +18,7 @@ class Map extends Component {
   renderMap(){
     this.map = new google.maps.Map(this.refs.map, {
           center: {lat: this.state.centerLong, lng: this.state.centerLat},
-          zoom: 14
+          zoom: 15
         });
   }
 
@@ -63,9 +63,9 @@ class Map extends Component {
          var flightPath = new google.maps.Polyline({
            path: flightPlanCoordinates,
            geodesic: true,
-           strokeColor: '#323232',
-           strokeOpacity: 0.7,
-           strokeWeight: 4
+           strokeColor: '#191919',
+           strokeOpacity: 0.6,
+           strokeWeight: 5
          });
 
          flightPath.setMap(map);
@@ -83,7 +83,7 @@ class Map extends Component {
         count = (count + 1);
         marker.setPosition( cords[count] );
         that.drawPath([cords[count-1],cords[count]],that.map);
-        if(count%15===0)
+        if(count%12===0)
           that.map.panTo({lat: cords[count].lat(), lng: cords[count].lng()});
       }, 100);
   }
