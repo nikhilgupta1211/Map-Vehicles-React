@@ -4,7 +4,24 @@ body {
   font-family: sans-serif;
 }
 
+button{
+  cursor: pointer;
+}
+
 .map{
-  height: 430px;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.mapcont{
+  position: relative;
+  height: 100vh;
+}
+
+.btn-marg{
+  margin: 5px 5px 5px 5px;
+  color: white;
 }
